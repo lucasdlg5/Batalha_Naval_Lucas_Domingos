@@ -1,0 +1,24 @@
+import re
+JOGADOR1 = open('jogador1.txt', 'r')
+JOGADOR2 = open('jogador2.txt', 'r')
+RESULTADO = open('resultado.txt', 'w')
+TABULEIRO_X, TABULEIRO_Y, LEITURA, PECA_TABULEIRO  = [], ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'], [], []
+for CONT in range(1,16):
+    TABULEIRO_X.append(CONT)
+for linha in JOGADOR1.readlines():
+    aux = (re.split(r'[;|\n]+', linha))
+    for numero in aux:
+        LEITURA.append(numero)
+if '1' in LEITURA and '2' and '3' and '4':
+    for x in LEITURA:
+        if len(x) >= 2 and len(x) <= 4 :
+            print ('carai', x)
+
+
+
+    print ('a')
+else:
+    print ('Entrada de peças invalido!! Verifique seu Arquivo de entrada')
+JOGADOR1.close()
+JOGADOR2.close()
+RESULTADO.close()

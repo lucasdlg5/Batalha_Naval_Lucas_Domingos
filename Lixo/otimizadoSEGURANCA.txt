@@ -1,0 +1,41 @@
+import re
+
+# VARIAVEIS DE ARQUIVOS - LEITURA E ESCRITA #
+JOGADOR1 = open('jogador1.txt', 'r')
+JOGADOR2 = open('jogador2.txt', 'r')
+RESULTADO = open('resultado.txt', 'w')
+
+# VARIAVEIS DO ALGORITMO #
+TABULEIRO_X = []
+TABULEIRO_Y = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P']
+LEITURA, PECA_TABULEIRO = [], []
+i = 0
+#######################################################
+
+# CRIAR O EIXO __X__ DO TABULEIRO #
+for CONT in range(1,16):
+    TABULEIRO_X.append(CONT)
+
+### INCLUSÃO DAS PEÇAS DO TABULEIROS ###
+## Leitura das posicoes das pecas ##
+for linha in JOGADOR1.readlines():
+    aux = (re.split(r'[;|\n]+', linha))
+    for numero in aux:
+        LEITURA.append(numero)
+print(LEITURA)
+
+# Filtro dos tipos de pecas a serem colocadas e validacao das pecas #
+if '1' in LEITURA and '2' and '3' and '4':
+    print ('entrou')
+       for x in LEITURA:
+        if len(x) >= 2 and len(x) <= 4 :
+            print ('carai', x)
+else:
+    print ('Entrada de peças invalido!! Verifique seu Arquivo de entrada')
+
+
+
+#######################################################
+JOGADOR1.close()
+JOGADOR2.close()
+RESULTADO.close()

@@ -1,0 +1,19 @@
+# Filtro dos tipos de pecas a serem colocadas e validacao das pecas #
+if '1' in LEITURA and '2' and '3' and '4':
+    print ('entrou')
+
+
+
+# VERIFICAR POSICOES DE ACORDO COM O TAMANHO DE TEXTO DE CADA ENTRADA #
+    for x in LEITURA:
+        if len(x) >= 2 and len(x) <= 4 :
+
+            if len(x) == 2:
+                print('carai 2', x)
+            elif len(x) == 3:
+                print('carai 3', x)
+            elif len(x) == 4:
+                print('carai 4', x)
+
+else:
+    print ('Entrada de peças invalido!! Verifique seu Arquivo de entrada')
