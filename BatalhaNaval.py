@@ -83,14 +83,31 @@ DICIONARIO_PECAS[2] = LEITURA[5:7]
 DICIONARIO_PECAS[3] = LEITURA[9:14]
 DICIONARIO_PECAS[4] = LEITURA[16:20]
 
-def EXTENCAO_PECA():
+def EXTENCAO_PECA(EXT):
     EXTENCAO = []
     EXTENCAO = LEITURA[1:3]
     print(RANGE_DO_TABULEIRO())
     print ('Lista inicial',EXTENCAO)
     print('Encontrar a posicao do elemetno:',EXTENCAO[0])
-    print (LEITURA.count(EXTENCAO[1]))
-    cont = 0
+
+    #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
+    if EXT == 1:
+        print ('Dicionario Numero 1!!')
+        N_PECA = 3
+    elif EXT == 2:
+        print('Dicionario Numero 2!!')
+        N_PECA = 4
+    elif EXT == 4:
+        print('Dicionario Numero 4!!')
+        N_PECA = 1
+
+    cont_list = -1
+    #for x in RANGE_DO_TABULEIRO():
+    #    cont_list += 1
+    #    if EXTENCAO[cont] == x:
+    #        while cont
+
+
     return
 EXTENCAO_PECA()
 
@@ -132,12 +149,14 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
     if x == 1:
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
+        EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 2:
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
+        EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
@@ -150,6 +169,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #print ('\nChave do Dicionario numero 4!!')
         #print('Chave:', x, y)
         #Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
+        EXTENCAO_PECA(x)
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
 
