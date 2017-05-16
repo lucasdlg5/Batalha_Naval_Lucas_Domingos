@@ -35,7 +35,7 @@ def RANGE_DO_TABULEIRO():
     return RANGE_TABULEIRO
 
 def VERIFICACAO_PECA(N):
-    # FAZER VERIFICAÇÃO E EXCECAO DE PEÇAS FORA DO TABULEIRO!!
+
     VERIF_PECA_TABUL = ""
     #ESTADO_PECA_TABUL = False
     #print (N)
@@ -77,10 +77,25 @@ for linha in JOGADOR1.readlines():
 #print(LEITURA)
 
 
+
 DICIONARIO_PECAS[1] = LEITURA[1:3]
 DICIONARIO_PECAS[2] = LEITURA[5:7]
 DICIONARIO_PECAS[3] = LEITURA[9:14]
 DICIONARIO_PECAS[4] = LEITURA[16:20]
+
+def EXTENCAO_PECA():
+    EXTENCAO = []
+    EXTENCAO = LEITURA[1:3]
+    print(RANGE_DO_TABULEIRO())
+    print ('Lista inicial',EXTENCAO)
+    print('Encontrar a posicao do elemetno:',EXTENCAO[0])
+    print (LEITURA.count(EXTENCAO[1]))
+    cont = 0
+    return
+EXTENCAO_PECA()
+
+
+
 
 
 #print ('print dicionario pecas 1', DICIONARIO_PECAS[1])
@@ -101,7 +116,7 @@ while chave < 5:
 
     chave += 1 # CONTADOR PARA SAIR DO LOOP WHILE #
 
-print('print do dicionario de posicao das pecas:', DICIONARIO_POSICAO_PECAS, '\n')
+#print('print do dicionario de posicao das pecas:', DICIONARIO_POSICAO_PECAS, '\n')
 o = 1
 
 
@@ -115,23 +130,26 @@ def ADC_PECAS(ADC): #PARA TIRAR TODOS OS VETORES DE TODAS PECAS E VERIFICAR SE J
         ADC_PECAS_TABULEIRO.append(x)
 for x, y in DICIONARIO_POSICAO_PECAS.items():
     if x == 1:
-        print ('Chave do Dicionario numero 1!!')
-        print('Chave:',x, y)
+        #print ('Chave do Dicionario numero 1!!')
+        #print('Chave:',x, y)
+        # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 2:
-        print ('\nChave do Dicionario numero 2!!')
-        print('Chave:', x, y)
+        #print ('\nChave do Dicionario numero 2!!')
+        #print('Chave:', x, y)
+        # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 3:
-        print ('\nChave do Dicionario numero 3!!')
-        print('Chave:', x, y)
+        #print ('\nChave do Dicionario numero 3!!')
+        #print('Chave:', x, y)
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 4:
-        print ('\nChave do Dicionario numero 4!!')
-        print('Chave:', x, y)
+        #print ('\nChave do Dicionario numero 4!!')
+        #print('Chave:', x, y)
+        #Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
 
@@ -142,7 +160,7 @@ ADC_PECAS_JOG1 = ADC_PECAS_TABULEIRO
 #print ('\n',ADC_PECAS_JOG1)
 #print ('\nPecas colocadas no tabuleiro\n',ADC_PECAS_TABULEIRO)
 
-ADC_PECAS_JOG2 = ['A1','C7', 'A5'] # AQUI DEVERA SER UTILIZADO OS VALORES DE ENTRADA DO ARQUIVO JOGARDOR_2!!
+ADC_PECAS_JOG2 = ['A2','C76', 'A5'] # AQUI DEVERA SER UTILIZADO OS VALORES DE ENTRADA DO ARQUIVO JOGARDOR_2!!
 VERIF_PECAS_JOGADORES(ADC_PECAS_JOG2)
 
 
