@@ -18,6 +18,9 @@ TABULEIRO_Y = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P']
 LEITURA = []
 
 
+ADC_PECAS_JOG1 = []
+ADC_PECAS_TABULEIRO = []
+
 
 #######################################################
 # DEFINICOES DE CODIGOS PARA UTILIZAR #
@@ -47,9 +50,13 @@ def VERIFICACAO_PECA(N):
                 break
         if x != VERIF_PECA_TABUL:
             RESULTADO.write('ERROR_POSITION_NONEXISTENT_VALIDATION')
-            #print('ERROR_POSITION_NONEXISTENT_VALIDATION:', x,'\n')  # ATENCAO - COLOCAR DENTRO D O ARQUIVO DE SAIDA!!!!!!!!!!!!!!!!!!!!
+            #print('ERROR_POSITION_NONEXISTENT_VALIDATION:', x,'\n')
             #ESTADO_PECA_TABUL = True
 
+# PARA TIRAR TODOS OS VETORES DE TODAS PECAS E VERIFICAR SE JA FOI COLOCADO A PECA NO TABULEIRO
+def ADC_PECAS(ADC):
+    for x in ADC:
+        ADC_PECAS_TABULEIRO.append(x)
 
 # VERIFICACAO DE PECAS REPETIDAS NO TABULEIRO APOS A LEITURA DE TODAS AS PECAS DO TABULEIRO
 def VERIF_PECAS_JOGADORES(VERF):
@@ -83,23 +90,57 @@ DICIONARIO_PECAS[2] = LEITURA[5:7]
 DICIONARIO_PECAS[3] = LEITURA[9:14]
 DICIONARIO_PECAS[4] = LEITURA[16:20]
 
+def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
+    TOTAL_EXT_PECA = []
+
+    print ('\nNumero de pecas a serem colocados:',NUM_PECA)
+    for LIST_DIC, y in DICIONARIO_POSICAO_PECAS.items(): # VERIFICAR PARA EXECUTAR O FOR PARA SOMENTEEEEEE UMAAAA LISTAAAAAAAA E NAO TODASSSSSSSS
+        VERF = []
+        VERF = y
+        for z in VERF:
+            #print('Tamanho', len(y))
+            #print('Encontrar a posicao do elemetno:',z)
+            POSICAO = RANGE_DO_TABULEIRO().index(z)
+            #print ('Ele se encontra na posicao:',POSICAO)
+            #print(RANGE_DO_TABULEIRO()[POSICAO])
+            ind = POSICAO
+            ind_desc = NUM_PECA
+            while ind_desc >= 0:
+                #print (ind)
+                ind_desc -= 1
+                TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
+                ind += 1
+            #ind_desc = NUM_PECA
+    print('Resposta Final', TOTAL_EXT_PECA)
+    return TOTAL_EXT_PECA
+
+
+
+
 def EXTENCAO_PECA(EXT):
-    EXTENCAO = []
-    EXTENCAO = LEITURA[1:3]
-    print(RANGE_DO_TABULEIRO())
-    print ('Lista inicial',EXTENCAO)
-    print('Encontrar a posicao do elemetno:',EXTENCAO[0])
+    #print(RANGE_DO_TABULEIRO())
+    print ('Lista inicial',DICIONARIO_POSICAO_PECAS[EXT])
 
     #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
     if EXT == 1:
         print ('Dicionario Numero 1!!')
         N_PECA = 3
-    elif EXT == 2:
-        print('Dicionario Numero 2!!')
-        N_PECA = 4
-    elif EXT == 4:
-        print('Dicionario Numero 4!!')
-        N_PECA = 1
+
+        #cOLAR DAQUI PARA BAIXO NO RESTANTE
+        LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
+
+
+
+
+
+
+
+    #elif LISTA_DICIONARIO_ELEMENTOS == 2:
+    #    print('Dicionario Numero 2!!')
+    #    N_PECA = 4
+    #elif LISTA_DICIONARIO_ELEMENTOS == 4:
+    #    print('Dicionario Numero 4!!')
+    #    N_PECA = 1
 
     cont_list = -1
     #for x in RANGE_DO_TABULEIRO():
@@ -108,8 +149,6 @@ def EXTENCAO_PECA(EXT):
     #        while cont
 
 
-    return
-EXTENCAO_PECA()
 
 
 
@@ -138,14 +177,15 @@ o = 1
 
 
 
-ADC_PECAS_JOG1 = []
-ADC_PECAS_TABULEIRO = []
 
-teste = ""
-def ADC_PECAS(ADC): #PARA TIRAR TODOS OS VETORES DE TODAS PECAS E VERIFICAR SE JA FOI COLOCADO A PECA NO TABULEIRO
-    for x in ADC:
-        ADC_PECAS_TABULEIRO.append(x)
+
+
+#def ADC_PECAS(ADC): #PARA TIRAR TODOS OS VETORES DE TODAS PECAS E VERIFICAR SE JA FOI COLOCADO A PECA NO TABULEIRO
+#    for x in ADC:
+#        ADC_PECAS_TABULEIRO.append(x)
+
 for x, y in DICIONARIO_POSICAO_PECAS.items():
+    #LISTA_DICIONARIO_ELEMENTOS(y)
     if x == 1:
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
@@ -156,20 +196,20 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
     elif x == 2:
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
-        EXTENCAO_PECA(x)
+        #EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 3:
         #print ('\nChave do Dicionario numero 3!!')
         #print('Chave:', x, y)
-        VERIFICACAO_PECA(y)
+        #VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 4:
         #print ('\nChave do Dicionario numero 4!!')
         #print('Chave:', x, y)
         #Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
-        EXTENCAO_PECA(x)
+        #EXTENCAO_PECA(x)
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
 
