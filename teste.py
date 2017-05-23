@@ -32,18 +32,19 @@
 #
 #VERIFICACAO_PECA(['A1','B2','B16','P14','5',5,'NH5'])
 
-DICI = {'1':['a','b','c','d','e'],
+DICI = {'1':['aBC','b','c','d','e'],
         '2':['am','bm','cm','dm','em']}
 
+print (DICI['1'][0][:-1])
 #d = dict(a=1, b=10, c=30, d=2)
 #print (d)
-e = []
-d = dict((k, v) for k, v in DICI.items() if k == '2')
-for y in d.values():
-
-    e.append(y)
-print ('lista de E:', e)
-print (e[0][1])
+#e = []
+#d = dict((k, v) for k, v in DICI.items() if k == '2')
+#for y in d.values():
+#
+#    e.append(y)
+#print ('lista de E:', e)
+#print (e[0][1])
 
 
 #DICI_P_LISTA = dict((x,y)for x, y in DICIONARIO_POSICAO_PECAS.items() if x == LIST_DIC:

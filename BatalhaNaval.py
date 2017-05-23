@@ -21,6 +21,8 @@ LEITURA = []
 ADC_PECAS_JOG1 = []
 ADC_PECAS_TABULEIRO = []
 
+TOTAL_EXT_PECA = []
+
 
 #######################################################
 # DEFINICOES DE CODIGOS PARA UTILIZAR #
@@ -35,6 +37,7 @@ def RANGE_DO_TABULEIRO():
             RANGE_TABULEIRO.append(TABULEIRO)
             i += 1
         i = 1
+
     return RANGE_TABULEIRO
 
 def VERIFICACAO_PECA(N):
@@ -85,37 +88,53 @@ for linha in JOGADOR1.readlines():
         LEITURA.append(numero)
 #print(LEITURA)
 
-
+print('Range do Tabuleiro: ',RANGE_DO_TABULEIRO())
 
 DICIONARIO_PECAS[1] = LEITURA[1:3]
 DICIONARIO_PECAS[2] = LEITURA[5:7]
 DICIONARIO_PECAS[3] = LEITURA[9:14]
 DICIONARIO_PECAS[4] = LEITURA[16:20]
 
+
 def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
     VERF = []
-    TOTAL_EXT_PECA = []
+    #TOTAL_EXT_PECA = []
     print ('Qual sera a lista de dicionario utilizado:',LIST_DIC)
 
     print ('Numero de pecas a serem colocados a mais em cada posicao:',NUM_PECA)
+
     DICI_P_LISTA = dict((x, y) for x, y in DICIONARIO_POSICAO_PECAS.items() if x == LIST_DIC)
     for y in DICI_P_LISTA.values():
         VERF.append(y)
 
     for z in VERF[0]:
+
+
         #print('Tamanho', len(y))
         #print('Encontrar a posicao do elemetno:',z)
         POSICAO = RANGE_DO_TABULEIRO().index(z)
-        #print ('Ele se encontra na posicao:',POSICAO)
-        #print(RANGE_DO_TABULEIRO()[POSICAO])
-        ind = POSICAO
-        ind_desc = NUM_PECA
-        while ind_desc >= 0:
-            #print (ind)
-            ind_desc -= 1
-            TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
-            ind += 1
-        #ind_desc = NUM_PECA
+        #print ('Teste um:',RANGE_DO_TABULEIRO()[POSICAO])
+        #print ('Teste dois:',DICIONARIO_PECAS[LIST_DIC][POSICAO][-1:])
+
+
+        ##ARRUMAR AQUI
+        if RANGE_DO_TABULEIRO()[POSICAO] == z and DICIONARIO_PECAS[LIST_DIC][:-1] in VERF:
+            index = VERF.index(DICIONARIO_PECAS[LIST_DIC][:-1])
+            print ('Teste index',index)
+            # DICIONARIO_PECAS[LIST_DIC][-1:]
+            print ('Termina com V!!')
+        else:
+            print ('Termina em H')
+            #print ('Ele se encontra na posicao:',POSICAO)
+            #print(RANGE_DO_TABULEIRO()[POSICAO])
+            ind = POSICAO
+            ind_desc = NUM_PECA
+            while ind_desc >= 0:
+                #print (ind)
+                ind_desc -= 1
+                TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
+                ind += 1
+            #ind_desc = NUM_PECA
 
     print('Resposta Final', TOTAL_EXT_PECA)
 
@@ -150,9 +169,12 @@ def EXTENCAO_PECA(EXT):
     else:
         return
 
+    print('Range do tabuleiro:', RANGE_DO_TABULEIRO())
+    print('Range do tabuleiro em A1:', RANGE_DO_TABULEIRO().index('A2'))
+    print('Range do tabuleiro em B1:', RANGE_DO_TABULEIRO().index('B2'))
+    print ('Diferenca de range:',RANGE_DO_TABULEIRO().index('B2') - RANGE_DO_TABULEIRO().index('A2'))
 
-
-    cont_list = -1
+    #cont_list = -1
     #for x in RANGE_DO_TABULEIRO():
     #    cont_list += 1
     #    if EXTENCAO[cont] == x:
