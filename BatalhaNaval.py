@@ -50,6 +50,7 @@ def VERIFICACAO_PECA(N):
                 break
         if x != VERIF_PECA_TABUL:
             RESULTADO.write('ERROR_POSITION_NONEXISTENT_VALIDATION')
+            exit()
             #print('ERROR_POSITION_NONEXISTENT_VALIDATION:', x,'\n')
             #ESTADO_PECA_TABUL = True
 
@@ -68,6 +69,7 @@ def VERIF_PECAS_JOGADORES(VERF):
                 VAL_ISSUE = True
     if VAL_ISSUE == True:
         RESULTADO.write('ERROR_OVERWRITE_PIECES_VALIDATION')
+        exit()
 #######################################################
 
 # CRIAR O EIXO __X__ DO TABULEIRO - VERIFICAR A REMOCAO DESTE BLOCO#
@@ -91,38 +93,38 @@ DICIONARIO_PECAS[3] = LEITURA[9:14]
 DICIONARIO_PECAS[4] = LEITURA[16:20]
 
 def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
+    VERF = []
     TOTAL_EXT_PECA = []
-    #print ('Qual lista do dicionario:',LIST_DIC)
+    print ('Qual sera a lista de dicionario utilizado:',LIST_DIC)
 
     print ('Numero de pecas a serem colocados a mais em cada posicao:',NUM_PECA)
-    for LIST_DIC, y in DICIONARIO_POSICAO_PECAS.items():
-        #VERF = []
-        VERF = y
+    DICI_P_LISTA = dict((x, y) for x, y in DICIONARIO_POSICAO_PECAS.items() if x == LIST_DIC)
+    for y in DICI_P_LISTA.values():
+        VERF.append(y)
 
-        for z in VERF:
+    for z in VERF[0]:
+        #print('Tamanho', len(y))
+        #print('Encontrar a posicao do elemetno:',z)
+        POSICAO = RANGE_DO_TABULEIRO().index(z)
+        #print ('Ele se encontra na posicao:',POSICAO)
+        #print(RANGE_DO_TABULEIRO()[POSICAO])
+        ind = POSICAO
+        ind_desc = NUM_PECA
+        while ind_desc >= 0:
+            #print (ind)
+            ind_desc -= 1
+            TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
+            ind += 1
+        #ind_desc = NUM_PECA
 
-            #print('Tamanho', len(y))
-            #print('Encontrar a posicao do elemetno:',z)
-            POSICAO = RANGE_DO_TABULEIRO().index(z)
-            #print ('Ele se encontra na posicao:',POSICAO)
-            #print(RANGE_DO_TABULEIRO()[POSICAO])
-            ind = POSICAO
-            ind_desc = NUM_PECA
-            while ind_desc >= 0:
-                #print (ind)
-                ind_desc -= 1
-                TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
-                ind += 1
-            #ind_desc = NUM_PECA
-        break
     print('Resposta Final', TOTAL_EXT_PECA)
+
     return TOTAL_EXT_PECA
 
 
 
 def EXTENCAO_PECA(EXT):
     #print(RANGE_DO_TABULEIRO())
-    print ('Lista inicial',DICIONARIO_POSICAO_PECAS[EXT])
 
     #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
     if EXT == 1:
@@ -134,7 +136,7 @@ def EXTENCAO_PECA(EXT):
         LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
 
 
-    elif EXT == 2:
+    if EXT == 2:
         print('\nDicionario Numero 2!!')
         print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 4
@@ -145,6 +147,10 @@ def EXTENCAO_PECA(EXT):
         print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 1
         LISTA_DICIONARIO_ELEMENTOS(EXT, N_PECA)
+    else:
+        return
+
+
 
     cont_list = -1
     #for x in RANGE_DO_TABULEIRO():
@@ -193,13 +199,16 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
     if x == 1:
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
-        EXTENCAO_PECA(x)
+
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
+        EXTENCAO_PECA(x)
+        #AQUI
     if x == 2:
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
+        print ('Valor de X:',x)
         EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
@@ -213,9 +222,11 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #print ('\nChave do Dicionario numero 4!!')
         #print('Chave:', x, y)
         #Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
-        #EXTENCAO_PECA(x)
+        EXTENCAO_PECA(x)
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
+
+
 
 
 # FAZER A ADICAO DAS PECAS DO SEGUNDO JOGADOR UTILIZANDO O ADC_PECAS(Y) TAMBEM
