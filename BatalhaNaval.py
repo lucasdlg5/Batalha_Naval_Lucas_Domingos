@@ -92,12 +92,15 @@ DICIONARIO_PECAS[4] = LEITURA[16:20]
 
 def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
     TOTAL_EXT_PECA = []
+    #print ('Qual lista do dicionario:',LIST_DIC)
 
-    print ('\nNumero de pecas a serem colocados:',NUM_PECA)
-    for LIST_DIC, y in DICIONARIO_POSICAO_PECAS.items(): # VERIFICAR PARA EXECUTAR O FOR PARA SOMENTEEEEEE UMAAAA LISTAAAAAAAA E NAO TODASSSSSSSS
-        VERF = []
+    print ('Numero de pecas a serem colocados a mais em cada posicao:',NUM_PECA)
+    for LIST_DIC, y in DICIONARIO_POSICAO_PECAS.items():
+        #VERF = []
         VERF = y
+
         for z in VERF:
+
             #print('Tamanho', len(y))
             #print('Encontrar a posicao do elemetno:',z)
             POSICAO = RANGE_DO_TABULEIRO().index(z)
@@ -111,9 +114,9 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
                 TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
                 ind += 1
             #ind_desc = NUM_PECA
+        break
     print('Resposta Final', TOTAL_EXT_PECA)
     return TOTAL_EXT_PECA
-
 
 
 
@@ -124,23 +127,24 @@ def EXTENCAO_PECA(EXT):
     #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
     if EXT == 1:
         print ('Dicionario Numero 1!!')
+        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 3
 
         #cOLAR DAQUI PARA BAIXO NO RESTANTE
         LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
 
 
+    elif EXT == 2:
+        print('\nDicionario Numero 2!!')
+        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+        N_PECA = 4
+        LISTA_DICIONARIO_ELEMENTOS(EXT, N_PECA)
 
-
-
-
-
-    #elif LISTA_DICIONARIO_ELEMENTOS == 2:
-    #    print('Dicionario Numero 2!!')
-    #    N_PECA = 4
-    #elif LISTA_DICIONARIO_ELEMENTOS == 4:
-    #    print('Dicionario Numero 4!!')
-    #    N_PECA = 1
+    elif EXT == 4:
+        print('\nDicionario Numero 4!!')
+        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+        N_PECA = 1
+        LISTA_DICIONARIO_ELEMENTOS(EXT, N_PECA)
 
     cont_list = -1
     #for x in RANGE_DO_TABULEIRO():
@@ -193,10 +197,10 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
-    elif x == 2:
+    if x == 2:
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
-        #EXTENCAO_PECA(x)
+        EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
