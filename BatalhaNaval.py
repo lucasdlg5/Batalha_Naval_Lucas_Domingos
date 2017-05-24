@@ -169,10 +169,10 @@ def EXTENCAO_PECA(EXT):
     else:
         return
 
-    print('Range do tabuleiro:', RANGE_DO_TABULEIRO())
-    print('Range do tabuleiro em A1:', RANGE_DO_TABULEIRO().index('A2'))
-    print('Range do tabuleiro em B1:', RANGE_DO_TABULEIRO().index('B2'))
-    print ('Diferenca de range:',RANGE_DO_TABULEIRO().index('B2') - RANGE_DO_TABULEIRO().index('A2'))
+    #print('Range do tabuleiro:', RANGE_DO_TABULEIRO())
+    #print('Range do tabuleiro em A1:', RANGE_DO_TABULEIRO().index('A2'))
+    #print('Range do tabuleiro em B1:', RANGE_DO_TABULEIRO().index('B2'))
+    #print ('Diferenca de range:',RANGE_DO_TABULEIRO().index('B2') - RANGE_DO_TABULEIRO().index('A2'))
 
     #cont_list = -1
     #for x in RANGE_DO_TABULEIRO():
