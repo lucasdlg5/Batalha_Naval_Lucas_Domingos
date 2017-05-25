@@ -53,6 +53,7 @@ def VERIFICACAO_PECA(N):
                 break
         if x != VERIF_PECA_TABUL:
             RESULTADO.write('ERROR_POSITION_NONEXISTENT_VALIDATION')
+            print ('ERROR_POSITION_NONEXISTENT_VALIDATION')
             exit()
             #print('ERROR_POSITION_NONEXISTENT_VALIDATION:', x,'\n')
             #ESTADO_PECA_TABUL = True
@@ -99,9 +100,9 @@ DICIONARIO_PECAS[4] = LEITURA[16:20]
 def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
     VERF = []
     #TOTAL_EXT_PECA = []
-    print ('Qual sera a lista de dicionario utilizado:',LIST_DIC)
+    #print ('Qual sera a lista de dicionario utilizado:',LIST_DIC)
 
-    print ('Numero de pecas a serem colocados a mais em cada posicao:',NUM_PECA)
+    #print ('Numero de pecas a serem colocados a mais em cada posicao:',NUM_PECA)
 
     DICI_P_LISTA = dict((x, y) for x, y in DICIONARIO_POSICAO_PECAS.items() if x == LIST_DIC)
     for y in DICI_P_LISTA.values():
@@ -118,14 +119,31 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
 
 
         ##ARRUMAR AQUI
-        if RANGE_DO_TABULEIRO()[POSICAO] == z and DICIONARIO_PECAS[LIST_DIC][:-1] in VERF:
-            index = VERF.index(DICIONARIO_PECAS[LIST_DIC][:-1])
-            print ('Teste index',index)
-            # DICIONARIO_PECAS[LIST_DIC][-1:]
-            print ('Termina com V!!')
-        else:
-            print ('Termina em H')
-            #print ('Ele se encontra na posicao:',POSICAO)
+        #print ('Valor:',DICIONARIO_PECAS[LIST_DIC][0][:-1])
+        #ORIENTACAO = (DICIONARIO_PECAS[LIST_DIC][0][-1:])
+        #print (ORIENTACAO)
+
+
+        #print ('Verificacao1:',RANGE_DO_TABULEIRO()[POSICAO])
+        #print ('Verificacao2:',DICIONARIO_PECAS[LIST_DIC][0][:-1] in VERF[0])
+        #print ('Verificacao3:',DICIONARIO_PECAS[LIST_DIC][0])
+        #print ('Verificacao3:',DICIONARIO_PECAS[LIST_DIC][0][-1:])
+        ENTRADA = str(z)  # usar a variavel z
+        index = VERF[0].index(ENTRADA)  # usar a variavel POSICAO
+        if RANGE_DO_TABULEIRO()[POSICAO] == z and z in VERF[0] and DICIONARIO_PECAS[LIST_DIC][index][-1:] == 'V':
+            #print ('Teste index',index)
+            #print ('Termina com V!! Peca:',ENTRADA)
+            ind = POSICAO
+            ind_desc = NUM_PECA
+            while ind_desc >= 0:
+                # print (ind)
+                ind_desc -= 1
+                TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
+                ind += 15
+
+        elif RANGE_DO_TABULEIRO()[POSICAO] == z:
+            #print('Termina com H!! Peca:', ENTRADA)
+            # print ('Ele se encontra na posicao:',POSICAO)
             #print(RANGE_DO_TABULEIRO()[POSICAO])
             ind = POSICAO
             ind_desc = NUM_PECA
@@ -135,8 +153,9 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
                 TOTAL_EXT_PECA.append(RANGE_DO_TABULEIRO()[ind])
                 ind += 1
             #ind_desc = NUM_PECA
-
-    print('Resposta Final', TOTAL_EXT_PECA)
+        else:
+            print('saiu!')
+    #print('Resposta Final', TOTAL_EXT_PECA)
 
     return TOTAL_EXT_PECA
 
@@ -147,8 +166,8 @@ def EXTENCAO_PECA(EXT):
 
     #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
     if EXT == 1:
-        print ('Dicionario Numero 1!!')
-        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+        #print ('Dicionario Numero 1!!')
+        #print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 3
 
         #cOLAR DAQUI PARA BAIXO NO RESTANTE
@@ -156,14 +175,14 @@ def EXTENCAO_PECA(EXT):
 
 
     if EXT == 2:
-        print('\nDicionario Numero 2!!')
-        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+       # print('\nDicionario Numero 2!!')
+       # print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 4
         LISTA_DICIONARIO_ELEMENTOS(EXT, N_PECA)
 
     elif EXT == 4:
-        print('\nDicionario Numero 4!!')
-        print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+       # print('\nDicionario Numero 4!!')
+       # print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 1
         LISTA_DICIONARIO_ELEMENTOS(EXT, N_PECA)
     else:
@@ -230,7 +249,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
     if x == 2:
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
-        print ('Valor de X:',x)
+        #print ('Valor de X:',x)
         EXTENCAO_PECA(x)
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
