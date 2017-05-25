@@ -23,6 +23,7 @@ ADC_PECAS_TABULEIRO = []
 
 TOTAL_EXT_PECA = []
 
+#PEC_1 = 0
 
 #######################################################
 # DEFINICOES DE CODIGOS PARA UTILIZAR #
@@ -91,10 +92,14 @@ for linha in JOGADOR1.readlines():
 
 print('Range do Tabuleiro: ',RANGE_DO_TABULEIRO())
 
-DICIONARIO_PECAS[1] = LEITURA[1:3]
-DICIONARIO_PECAS[2] = LEITURA[5:7]
-DICIONARIO_PECAS[3] = LEITURA[9:14]
-DICIONARIO_PECAS[4] = LEITURA[16:20]
+DICIONARIO_PECAS[1] = LEITURA[LEITURA.index('1')+1:LEITURA.index('2')-1]
+#DICIONARIO_PECAS[1] = LEITURA[1:3]
+DICIONARIO_PECAS[2] = LEITURA[LEITURA.index('2')+1:LEITURA.index('3')-1]
+#DICIONARIO_PECAS[2] = LEITURA[5:7]
+DICIONARIO_PECAS[3] = LEITURA[LEITURA.index('3')+1:LEITURA.index('4')-1]
+#DICIONARIO_PECAS[3] = LEITURA[9:14]
+DICIONARIO_PECAS[4] = LEITURA[LEITURA.index('4')+1:len(LEITURA)]
+#DICIONARIO_PECAS[4] = LEITURA[16:20]
 
 
 def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
@@ -155,7 +160,7 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
             #ind_desc = NUM_PECA
         else:
             print('saiu!')
-    print('Resposta Extensao Pecas', TOTAL_EXT_PECA)
+    #print('Resposta Extensao Pecas', TOTAL_EXT_PECA)
 
     return TOTAL_EXT_PECA
 
@@ -163,13 +168,13 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
 
 def EXTENCAO_PECA(EXT):
     #print(RANGE_DO_TABULEIRO())
-
+    PEC_1 = 0
     #DICI_N_PECAS = 0 #NUMERO DE PECAS A SEREM ADICIONADAS DE ACORDO COM O NUMERO DA LISTA - DELETAR DEPOIS
     if EXT == 1:
         #print ('Dicionario Numero 1!!')
         #print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
         N_PECA = 3
-
+        PEC_1 += 1
         #cOLAR DAQUI PARA BAIXO NO RESTANTE
         LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
 
@@ -247,6 +252,9 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
     if x == 1:
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
+        if len(y)>2:
+            print('EXCEÇÃO AQUII RAPAZ!!!') #Colocar a chamada pradefinicao de exceção
+
 
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
@@ -288,7 +296,7 @@ ADC_PECAS_JOG2 = ['A2','C76', 'A5'] # AQUI DEVERA SER UTILIZADO OS VALORES DE EN
 VERIF_PECAS_JOGADORES(ADC_PECAS_JOG2)
 
 
-print ('aqui',TOTAL_EXT_PECA)
+print ('Pecas adicionadas ao tabuleiro com extencao',TOTAL_EXT_PECA)
 
 
 
