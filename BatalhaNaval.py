@@ -4,7 +4,7 @@ import re
 JOGADOR1 = open('jogador1.txt', 'r')
 JOGADOR2 = open('jogador2.txt', 'r')
 RESULTADO = open('resultado.txt', 'w')
-
+JOGADOR = 'J1'
 
 # VARIAVEIS PARA FILTRO ORIENTACAO E PECA TABULEIRO #
 DICIONARIO_PECAS, DICIONARIO_POSICAO_PECAS, POSICAO_PECA = {}, {}, []
@@ -64,17 +64,21 @@ def ADC_PECAS(ADC):
     for x in ADC:
         ADC_PECAS_TABULEIRO.append(x)
 
+
+def NUMERO_PECAS_INVALIDO():
+    RESULTADO.write('ERROR_NR_PARTS_VALIDATION')
+    print ('ERROR_NR_PARTS_VALIDATION')
+    exit()
+
+
 # VERIFICACAO DE PECAS REPETIDAS NO TABULEIRO APOS A LEITURA DE TODAS AS PECAS DO TABULEIRO
 def VERIF_PECAS_JOGADORES(VERF):
-    VAL_ISSUE = False
     for x in VERF:
-        for y in ADC_PECAS_TABULEIRO:
-            if x == y:
-                print('ERROR_OVERWRITE_PIECES_VALIDATION', x)
-                VAL_ISSUE = True
-    if VAL_ISSUE == True:
-        RESULTADO.write('ERROR_OVERWRITE_PIECES_VALIDATION')
-        exit()
+        if TOTAL_EXT_PECA.count(x) > 1:
+            RESULTADO.write('ERROR_OVERWRITE_PIECES_VALIDATION')
+            print ('ERROR_OVERWRITE_PIECES_VALIDATION')
+            print (TOTAL_EXT_PECA)
+            exit()
 #######################################################
 
 # CRIAR O EIXO __X__ DO TABULEIRO - VERIFICAR A REMOCAO DESTE BLOCO#
@@ -253,8 +257,8 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
         if len(y)>2:
-            print('EXCEÇÃO AQUII RAPAZ!!!') #Colocar a chamada pradefinicao de exceção
-
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 1!!!') #Colocar a chamada pradefinicao de exceção
+            NUMERO_PECAS_INVALIDO()
 
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
         VERIFICACAO_PECA(y)
@@ -262,6 +266,9 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         EXTENCAO_PECA(x)
         #AQUI
     if x == 2:
+        if len(y)>2:
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 2!!!') #Colocar a chamada pradefinicao de exceção
+            NUMERO_PECAS_INVALIDO()
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
         #print ('Valor de X:',x)
@@ -270,12 +277,18 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         VERIFICACAO_PECA(y)
         ADC_PECAS(y)
     elif x == 3:
+        if len(y)>5:
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 3!!!') #Colocar a chamada pradefinicao de exceção
+            NUMERO_PECAS_INVALIDO()
         #print ('\nChave do Dicionario numero 3!!')
         #print('Chave:', x, y)
         #VERIFICACAO_PECA(y)
         EXTENCAO_PECA(x)
         ADC_PECAS(y)
     elif x == 4:
+        if len(y)>4:
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 4!!!') #Colocar a chamada pradefinicao de exceção
+            NUMERO_PECAS_INVALIDO()
         #print ('\nChave do Dicionario numero 4!!')
         #print('Chave:', x, y)
         #Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
@@ -288,12 +301,14 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
 
 # FAZER A ADICAO DAS PECAS DO SEGUNDO JOGADOR UTILIZANDO O ADC_PECAS(Y) TAMBEM
 
-ADC_PECAS_JOG1 = ADC_PECAS_TABULEIRO
+#ADC_PECAS_JOG1 = ADC_PECAS_TABULEIRO
+ADC_PECAS_JOG1 = TOTAL_EXT_PECA
 #print ('\n',ADC_PECAS_JOG1)
 #print ('\nPecas colocadas no tabuleiro\n',ADC_PECAS_TABULEIRO)
 
 ADC_PECAS_JOG2 = ['A2','C76', 'A5'] # AQUI DEVERA SER UTILIZADO OS VALORES DE ENTRADA DO ARQUIVO JOGARDOR_2!!
-VERIF_PECAS_JOGADORES(ADC_PECAS_JOG2)
+
+VERIF_PECAS_JOGADORES(ADC_PECAS_JOG1)
 
 
 print ('Pecas adicionadas ao tabuleiro com extencao',TOTAL_EXT_PECA)
