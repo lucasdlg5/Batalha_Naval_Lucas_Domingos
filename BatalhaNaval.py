@@ -155,7 +155,7 @@ def LISTA_DICIONARIO_ELEMENTOS(LIST_DIC,NUM_PECA):
             #ind_desc = NUM_PECA
         else:
             print('saiu!')
-    #print('Resposta Final', TOTAL_EXT_PECA)
+    print('Resposta Extensao Pecas', TOTAL_EXT_PECA)
 
     return TOTAL_EXT_PECA
 
@@ -173,6 +173,13 @@ def EXTENCAO_PECA(EXT):
         #cOLAR DAQUI PARA BAIXO NO RESTANTE
         LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
 
+    if EXT == 3:
+        #print ('Dicionario Numero 1!!')
+        #print('Lista inicial', DICIONARIO_POSICAO_PECAS[EXT])
+        N_PECA = 0
+
+        #cOLAR DAQUI PARA BAIXO NO RESTANTE
+        LISTA_DICIONARIO_ELEMENTOS(EXT,N_PECA)
 
     if EXT == 2:
        # print('\nDicionario Numero 2!!')
@@ -258,6 +265,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #print ('\nChave do Dicionario numero 3!!')
         #print('Chave:', x, y)
         #VERIFICACAO_PECA(y)
+        EXTENCAO_PECA(x)
         ADC_PECAS(y)
     elif x == 4:
         #print ('\nChave do Dicionario numero 4!!')
@@ -280,7 +288,7 @@ ADC_PECAS_JOG2 = ['A2','C76', 'A5'] # AQUI DEVERA SER UTILIZADO OS VALORES DE EN
 VERIF_PECAS_JOGADORES(ADC_PECAS_JOG2)
 
 
-
+print ('aqui',TOTAL_EXT_PECA)
 
 
 
