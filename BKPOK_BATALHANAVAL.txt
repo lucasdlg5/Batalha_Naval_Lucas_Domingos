@@ -96,7 +96,7 @@ def VERIF_PECAS_JOGADORES(VERF):
 #    TABULEIRO_X.append(CONT)
 #print(TABULEIRO_X)
 
-### INCLUSÃƒO DAS PEÃ‡AS DO TABULEIROS ###
+### INCLUSÃO DAS PEÇAS DO TABULEIROS ###
 ## Leitura das posicoes das pecas ##
 for linha in JOGADOR1.readlines():
     aux = (re.split(r'[;|\n|]+', linha))
@@ -299,7 +299,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #print ('Chave do Dicionario numero 1!!')
         #print('Chave:',x, y)
         if len(y)>2:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 1!!!') #Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 1!!!') #Colocar a chamada pradefinicao de exceção
             NUMERO_PECAS_INVALIDO('J1')
 
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
@@ -309,7 +309,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         #AQUI
     if x == 2:
         if len(y)>2:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 2!!!') #Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 2!!!') #Colocar a chamada pradefinicao de exceção
             NUMERO_PECAS_INVALIDO('J1')
         #print ('\nChave do Dicionario numero 2!!')
         #print('Chave:', x, y)
@@ -320,7 +320,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         ADC_PECAS(y)
     elif x == 3:
         if len(y)>5:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 3!!!') #Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 3!!!') #Colocar a chamada pradefinicao de exceção
             NUMERO_PECAS_INVALIDO('J1')
         #print ('\nChave do Dicionario numero 3!!')
         #print('Chave:', x, y)
@@ -329,7 +329,7 @@ for x, y in DICIONARIO_POSICAO_PECAS.items():
         ADC_PECAS(y)
     elif x == 4:
         if len(y)>4:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 4!!!') #Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 4!!!') #Colocar a chamada pradefinicao de exceção
             NUMERO_PECAS_INVALIDO('J1')
         #print ('\nChave do Dicionario numero 4!!')
         #print('Chave:', x, y)
@@ -346,7 +346,7 @@ for z, a in DICIONARIO_POSICAO_PECAS2.items():
         # print ('Chave do Dicionario numero 1!!')
         # print('Chave:',x, y)
         if len(a) > 2:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 1!!!')  # Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 1!!!')  # Colocar a chamada pradefinicao de exceção
             print ('Lista',DICIONARIO_POSICAO_PECAS2)
             NUMERO_PECAS_INVALIDO('J2')
         # Colocar a extencao total da peca andes de mandar para a DEF VERIFICACAO_PECA!!
@@ -356,7 +356,7 @@ for z, a in DICIONARIO_POSICAO_PECAS2.items():
         # AQUI
     if z == 2:
         if len(a) > 2:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 2!!!')  # Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 2!!!')  # Colocar a chamada pradefinicao de exceção
             print('Lista', DICIONARIO_POSICAO_PECAS2)
             NUMERO_PECAS_INVALIDO('J2')
         # print ('\nChave do Dicionario numero 2!!')
@@ -368,7 +368,7 @@ for z, a in DICIONARIO_POSICAO_PECAS2.items():
         ADC_PECAS(a)
     elif z == 3:
         if len(a) > 5:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 3!!!')  # Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 3!!!')  # Colocar a chamada pradefinicao de exceção
             print('Lista', DICIONARIO_POSICAO_PECAS2)
             NUMERO_PECAS_INVALIDO('J2')
         # print ('\nChave do Dicionario numero 3!!')
@@ -378,7 +378,7 @@ for z, a in DICIONARIO_POSICAO_PECAS2.items():
         ADC_PECAS(a)
     elif z == 4:
         if len(a) > 4:
-            print('EXCEÃ‡ÃƒO AQUII RAPAZ - PECA NUMERO 4!!!')  # Colocar a chamada pradefinicao de exceÃ§Ã£o
+            print('EXCEÇÃO AQUII RAPAZ - PECA NUMERO 4!!!')  # Colocar a chamada pradefinicao de exceção
             print('Lista', DICIONARIO_POSICAO_PECAS2)
             NUMERO_PECAS_INVALIDO('J2')
         # print ('\nChave do Dicionario numero 4!!')
