@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28368f95-1ec3-4bb4-9db7-8868e22f9616" name="Default" comment="IMPLEMENTADO NAVIOS JOGADOR 2 E SUAS EXCEÇÕES DE CÓDIGOS. INICIAR CONTAGEM DE TORPEDOS E PONTUAÇÕES">
+    <list default="true" id="28368f95-1ec3-4bb4-9db7-8868e22f9616" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatalhaNaval.py" afterPath="$PROJECT_DIR$/BatalhaNaval.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jogador1.txt" afterPath="$PROJECT_DIR$/jogador1.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jogador2.txt" afterPath="$PROJECT_DIR$/jogador2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resultado.txt" afterPath="$PROJECT_DIR$/resultado.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="BatalhaNaval.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BatalhaNaval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="685" column="21" lean-forward="true" selection-start-line="685" selection-start-column="21" selection-end-line="685" selection-end-column="21" />
+            <state relative-caret-position="204">
+              <caret line="288" column="33" lean-forward="true" selection-start-line="288" selection-start-column="33" selection-end-line="288" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -47,6 +46,8 @@
       <find>Lista inici</find>
       <find>ERROR_POSITION_NONEXISTENT_VALIDATION</find>
       <find>ERROR_OVERWRITE_PIECES_VALIDATION</find>
+      <find>ERROR_NR_PARTS_VALIDATION</find>
+      <find>TOTAL PONTOS</find>
     </findStrings>
     <replaceStrings>
       <replace>FILTRO_PECA1</replace>
@@ -83,7 +84,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -415,22 +416,29 @@
       <option name="project" value="LOCAL" />
       <updated>1496289094877</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="IMPLEMENTADO TIROS DE TORPEDOS E VERIFICAÇAÕ DE ACERTO EM NAVIOS E PONTUAÇÃO DIFERENCIADO PARA METADE E ACERTO COMPLETO DE NAVIO">
+      <created>1496341449055</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1496341449055</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17033774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16983895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4161184" sideWeight="0.50292826" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40789473" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40789473" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4786184" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4786184" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -474,31 +482,32 @@
     <MESSAGE value="Ajustado a adição dinamica de pecas, na linha 95 onde é feito o fatiamento das posições de Lista. Inicio da montagem de exceção de quantidade de pecas." />
     <MESSAGE value="Implementado a validação de peças sobrepostas e quantidade limite de pecas." />
     <MESSAGE value="IMPLEMENTADO NAVIOS JOGADOR 2 E SUAS EXCEÇÕES DE CÓDIGOS. INICIAR CONTAGEM DE TORPEDOS E PONTUAÇÕES" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPLEMENTADO NAVIOS JOGADOR 2 E SUAS EXCEÇÕES DE CÓDIGOS. INICIAR CONTAGEM DE TORPEDOS E PONTUAÇÕES" />
+    <MESSAGE value="IMPLEMENTADO TIROS DE TORPEDOS E VERIFICAÇAÕ DE ACERTO EM NAVIOS E PONTUAÇÃO DIFERENCIADO PARA METADE E ACERTO COMPLETO DE NAVIO" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPLEMENTADO TIROS DE TORPEDOS E VERIFICAÇAÕ DE ACERTO EM NAVIOS E PONTUAÇÃO DIFERENCIADO PARA METADE E ACERTO COMPLETO DE NAVIO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BatalhaNaval.py</url>
-          <line>674</line>
-          <option name="timeStamp" value="137" />
+          <line>725</line>
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BatalhaNaval.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="152" />
+          <line>721</line>
+          <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BatalhaNaval.py</url>
-          <line>242</line>
-          <option name="timeStamp" value="154" />
+          <line>281</line>
+          <option name="timeStamp" value="210" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="155" />
+      <option name="time" value="212" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -506,10 +515,10 @@
         <watch expression="TORPEDOS_J2" language="Python" />
         <watch expression="TOTAL_EXT_PECA" language="Python" />
         <watch expression="TOTAL_EXT_PECA2" language="Python" />
-        <watch expression="TOTAL_EXT_PECA2[0:4]" language="Python" />
         <watch expression="PONTOS_J1" language="Python" />
         <watch expression="PONTOS_J2" language="Python" />
-        <watch expression="TOTAL_EXT_PECA2.index('J10')" language="Python" />
+        <watch expression="ACERTOS_NAVIOS1" language="Python" />
+        <watch expression="ACERTOS_NAVIOS2" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -746,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BatalhaNaval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="685" column="21" lean-forward="true" selection-start-line="685" selection-start-column="21" selection-end-line="685" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="288" column="33" lean-forward="true" selection-start-line="288" selection-start-column="33" selection-end-line="288" selection-end-column="33" />
           <folding />
         </state>
       </provider>

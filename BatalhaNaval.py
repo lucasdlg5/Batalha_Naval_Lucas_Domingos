@@ -47,10 +47,11 @@ def TORPEDOS_NAVIOS():
            if x == y:
 
                 PONTOS_J1 += 3
-                print ('ACERTOU UM NAVIO!! Torpedo:',x)
+                #print ('ACERTOU UM NAVIO!! Torpedo:',x)
                 ACERTOS_NAVIOS1.append(x)
 
-    print ('Lista de acertos para J1:', ACERTOS_NAVIOS1)
+
+    #print ('Lista de acertos para J1:', ACERTOS_NAVIOS1)
 
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[0]:
@@ -63,6 +64,7 @@ def TORPEDOS_NAVIOS():
                 I += 1
         if I == 4:
             PONTOS_J1 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[4]:
@@ -75,6 +77,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 4:
             PONTOS_J1 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[8]:
@@ -89,6 +92,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 5:
             PONTOS_J1 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[13]:
@@ -103,6 +107,18 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 5:
             PONTOS_J1 += 2
+            break
+    for A in ACERTOS_NAVIOS1:
+        if A == TOTAL_EXT_PECA2[18]:
+            PONTOS_J1 += 2
+        if A == TOTAL_EXT_PECA2[19]:
+            PONTOS_J1 += 2
+        if A == TOTAL_EXT_PECA2[20]:
+            PONTOS_J1 += 2
+        if A == TOTAL_EXT_PECA2[21]:
+            PONTOS_J1 += 2
+        if A == TOTAL_EXT_PECA2[22]:
+            PONTOS_J1 += 2
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[23]:
@@ -111,6 +127,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J1 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[25]:
@@ -119,7 +136,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J1 += 2
-
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[27]:
@@ -128,7 +145,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J1 += 2
-
+            break
     I = 0
     for A in ACERTOS_NAVIOS1:
         if A == TOTAL_EXT_PECA2[29]:
@@ -137,8 +154,8 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J1 += 2
-
-    print('TOTAL PONTOS J1:', PONTOS_J1,'\n')
+            break
+    #print ('len navios acertados', len(ACERTOS_NAVIOS1))
 
 
 ############################################################
@@ -149,7 +166,7 @@ def TORPEDOS_NAVIOS():
            if x == y:
 
                 PONTOS_J2 += 3
-                print ('ACERTOU UM NAVIO!! Torpedo:',x)
+                #print ('ACERTOU UM NAVIO!! Torpedo:',x)
                 ACERTOS_NAVIOS2.append(x)
 
 
@@ -164,6 +181,19 @@ def TORPEDOS_NAVIOS():
                 I += 1
         if I == 4:
             PONTOS_J2 += 2
+            break
+
+    for A in ACERTOS_NAVIOS2:
+        if A == TOTAL_EXT_PECA[18]:
+            PONTOS_J2 += 2
+        if A == TOTAL_EXT_PECA[19]:
+            PONTOS_J2 += 2
+        if A == TOTAL_EXT_PECA[20]:
+            PONTOS_J2 += 2
+        if A == TOTAL_EXT_PECA[21]:
+            PONTOS_J2 += 2
+        if A == TOTAL_EXT_PECA[22]:
+            PONTOS_J2 += 2
     I = 0
     for A in ACERTOS_NAVIOS2:
         if A == TOTAL_EXT_PECA[4]:
@@ -176,6 +206,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 4:
             PONTOS_J2 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS2:
         if A == TOTAL_EXT_PECA[8]:
@@ -190,6 +221,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 5:
             PONTOS_J2 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS2:
         if A == TOTAL_EXT_PECA[13]:
@@ -204,6 +236,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 5:
             PONTOS_J2 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS2:
         if A == TOTAL_EXT_PECA[23]:
@@ -212,6 +245,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J2 += 2
+            break
     I = 0
     for A in ACERTOS_NAVIOS2:
         if A == TOTAL_EXT_PECA[25]:
@@ -220,6 +254,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J2 += 2
+            break
 
     I = 0
     for A in ACERTOS_NAVIOS2:
@@ -229,6 +264,7 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J2 += 2
+            break
 
     I = 0
     for A in ACERTOS_NAVIOS2:
@@ -238,9 +274,15 @@ def TORPEDOS_NAVIOS():
             I += 1
         if I == 2:
             PONTOS_J2 += 2
+            break
 
-    print('Lista de acertos para J2:', ACERTOS_NAVIOS2)
-    print('TOTAL PONTOS J2:', PONTOS_J2)
+    #print('Lista de acertos para J2:', ACERTOS_NAVIOS2)
+
+    #print('TOTAL PONTOS J1:', PONTOS_J1)
+    #print('TOTAL PONTOS J2:', PONTOS_J2)
+
+    #print ('len navios acertados J2', len(ACERTOS_NAVIOS2))
+
     return
 
 def RANGE_DO_TABULEIRO():
