@@ -278,9 +278,10 @@ def TORPEDOS_NAVIOS():
 
     #print('Lista de acertos para J2:', ACERTOS_NAVIOS2)
 
-    #print('TOTAL PONTOS J1:', PONTOS_J1)
-    #print('TOTAL PONTOS J2:', PONTOS_J2)
-
+    print('TOTAL PONTOS J1:', PONTOS_J1)
+    print('TOTAL PONTOS J2:', PONTOS_J2)
+    if PONTOS_J1 == PONTOS_J2:
+        RESULTADO.write('J1 '+ str(len(ACERTOS_NAVIOS1)) + 'Colocar Alvos errados '+ str(PONTOS_J1)+'\nJ2 '+ str(len(ACERTOS_NAVIOS2)) + 'Colocar Alvos Errados '+ str(PONTOS_J2))
     #print ('len navios acertados J2', len(ACERTOS_NAVIOS2))
 
     return
@@ -720,9 +721,8 @@ VERIF_PECAS_JOGADORES2(ADC_PECAS_JOG2)
 #print ('Pecas adicionadas ao tabuleiro com extencao',TOTAL_EXT_PECA)
 if len(TORPEDOS_J1) > 20:
     NUMERO_PECAS_INVALIDO('J1')
-else:
-    TORPEDOS_NAVIOS()
-if len(TORPEDOS_J2) > 20:
+
+elif len(TORPEDOS_J2) > 20:
     NUMERO_PECAS_INVALIDO('J2')
 else:
     TORPEDOS_NAVIOS()
