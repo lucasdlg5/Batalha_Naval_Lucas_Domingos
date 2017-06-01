@@ -4,7 +4,6 @@
     <list default="true" id="28368f95-1ec3-4bb4-9db7-8868e22f9616" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BatalhaNaval.py" afterPath="$PROJECT_DIR$/BatalhaNaval.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jogador2.txt" afterPath="$PROJECT_DIR$/jogador2.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resultado.txt" afterPath="$PROJECT_DIR$/resultado.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="BatalhaNaval.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BatalhaNaval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="282" column="30" lean-forward="false" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
+            <state relative-caret-position="230">
+              <caret line="290" column="26" lean-forward="false" selection-start-line="290" selection-start-column="26" selection-end-line="290" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -430,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496344085999</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="VERIFICAR ARQUIVO DE SAIDA EMPATE E TORPEDOS QUE NAO TIVERAM ACERTO NO ARQUIVO DE SAIDA">
+      <created>1496344635022</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1496344635022</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -491,14 +497,15 @@
     <MESSAGE value="IMPLEMENTADO NAVIOS JOGADOR 2 E SUAS EXCEÇÕES DE CÓDIGOS. INICIAR CONTAGEM DE TORPEDOS E PONTUAÇÕES" />
     <MESSAGE value="IMPLEMENTADO TIROS DE TORPEDOS E VERIFICAÇAÕ DE ACERTO EM NAVIOS E PONTUAÇÃO DIFERENCIADO PARA METADE E ACERTO COMPLETO DE NAVIO" />
     <MESSAGE value="IMPLEMENTADO PONTUAÇÃO DE AMBOS JOGADORES E SUAS EXCEÇÕES. INICIAR COMPARAÇÃO ENTRE JOGADORES PARA ARQUIVO FINAL" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPLEMENTADO PONTUAÇÃO DE AMBOS JOGADORES E SUAS EXCEÇÕES. INICIAR COMPARAÇÃO ENTRE JOGADORES PARA ARQUIVO FINAL" />
+    <MESSAGE value="VERIFICAR ARQUIVO DE SAIDA EMPATE E TORPEDOS QUE NAO TIVERAM ACERTO NO ARQUIVO DE SAIDA" />
+    <option name="LAST_COMMIT_MESSAGE" value="VERIFICAR ARQUIVO DE SAIDA EMPATE E TORPEDOS QUE NAO TIVERAM ACERTO NO ARQUIVO DE SAIDA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BatalhaNaval.py</url>
-          <line>722</line>
+          <line>729</line>
           <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -758,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BatalhaNaval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="282" column="30" lean-forward="false" selection-start-line="282" selection-start-column="30" selection-end-line="282" selection-end-column="30" />
+        <state relative-caret-position="230">
+          <caret line="290" column="26" lean-forward="false" selection-start-line="290" selection-start-column="26" selection-end-line="290" selection-end-column="26" />
           <folding />
         </state>
       </provider>

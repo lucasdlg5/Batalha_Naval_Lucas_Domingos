@@ -1,2 +1,2 @@
-J1 16Colocar Alvos errados 58
-J2 16Colocar Alvos Errados 58
+J1 16AA Colocar Alvos erradosAE 58PT
+J2 16AA Colocar Alvos ErradosAE 58PT

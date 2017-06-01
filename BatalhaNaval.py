@@ -281,8 +281,15 @@ def TORPEDOS_NAVIOS():
     print('TOTAL PONTOS J1:', PONTOS_J1)
     print('TOTAL PONTOS J2:', PONTOS_J2)
     if PONTOS_J1 == PONTOS_J2:
-        RESULTADO.write('J1 '+ str(len(ACERTOS_NAVIOS1)) + 'Colocar Alvos errados '+ str(PONTOS_J1)+'\nJ2 '+ str(len(ACERTOS_NAVIOS2)) + 'Colocar Alvos Errados '+ str(PONTOS_J2))
+        print('EMPATE!!')
+        RESULTADO.write('J1 '+ str(len(ACERTOS_NAVIOS1)) +'AA'+ ' Colocar Alvos errados'+'AE '+ str(PONTOS_J1)+'PT'+'\nJ2 '+ str(len(ACERTOS_NAVIOS2)) +'AA' +' Colocar Alvos Errados'+'AE '+ str(PONTOS_J2)+'PT')
     #print ('len navios acertados J2', len(ACERTOS_NAVIOS2))
+    elif PONTOS_J1 > PONTOS_J2:
+        print('J1 GANHOU!!')
+        RESULTADO.write('J1 ' + str(len(ACERTOS_NAVIOS1)) + 'AA' + ' Colocar Alvos errados' + 'AE ' + str(PONTOS_J1) + 'PT')
+    elif PONTOS_J2 > PONTOS_J1:
+        print('J2 GANHOU!!')
+        RESULTADO.write('J2 '+ str(len(ACERTOS_NAVIOS2)) +'AA' +' Colocar Alvos Errados'+'AE '+ str(PONTOS_J2)+'PT')
 
     return
 
